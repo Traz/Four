@@ -17,9 +17,8 @@ Each tag come with a step, so :
   - Simple Form 3beta for Rails 4
   - Sorcery : authentication, signup and login.
 
-
 ### Usage
 
     git clone https://github.com/Traz/Four.git
     git tag -l (list tags)
-    git checkout 0.1 (for getting the right step)
+    git checkout 0.1 (for getting the right step : pick always the last sub version : 0.1.1 insteed of 0.1.0 ie).
