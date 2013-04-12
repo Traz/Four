@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, except: [:create, :new]
+  before_action :require_login, except: [:create, :new, :signup]
 
   # GET /users
   # GET /users.json
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def signup
+    @user = User.new
+  end
+
+
   # GET /users/1/edit
   def edit
   end
@@ -29,11 +34,18 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to root_url, notice: 'User was successfully created, signed up !' }
+      if @user.save  
+        @user = login(params[:user][:email], params[:user][:password]) if !current_user 
+        format.html do 
+          if !@user.active
+            redirect_to edit_user_path(@user), notice: 'User was successfully created, signed up !'
+          else
+            redirect_to @user
+          end 
+        end
         format.json { render action: 'show', status: :created, location: @user }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'signup' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

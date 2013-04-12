@@ -26,7 +26,7 @@
       .col-span-4
         = f.error_notification
         = f.input :email
-        = f.input :password
+        = f.input :password, :required => true
       .col-span-4
         = f.submit "Login", :class => 'btn btn-success btn-large'
 
@@ -41,8 +41,8 @@
       .col-span-4
         = f.error_notification
         = f.input :email
-        = f.input :password
-        = f.input :password_confirmation
+        = f.input :password, :required => true
+        = f.input :password_confirmation, :required => true
       .col-span-4
         = f.submit "SignUp", :class => 'btn btn-primary btn-large'
 

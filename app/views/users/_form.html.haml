@@ -1,28 +1,13 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :username
-    = f.text_field :username
-  .field
-    = f.label :lastname
-    = f.text_field :lastname
-  .field
-    = f.label :identity
-    = f.text_field :identity
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :birthdate
-    = f.date_select :birthdate
-  .field
-    = f.label :active
-    = f.check_box :active
-  .actions
-    = f.submit 'Save'
+= simple_form_for @user, :html => {:class => 'well form-horizontal'}  do |f|
+  = f.error_notification
+  = f.input :username, :required => true, error_html: { id: 'username_error'}
+  = f.input :lastname
+  = f.input :identity
+  = f.input :email
+  = f.input :birthdate, :as => :date
+  = f.input :active
+  = f.input :password
+  = f.input :password_confirmation
+  .form-actions
+    = f.submit "Update", :class => "btn btn-primary" 
+    = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" 
