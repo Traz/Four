@@ -1,0 +1,60 @@
+.jumbotron{style: "margin-top:200px"}
+  .h1 Welcome to Four !
+  %br
+  .h4 Test line H4
+  %br
+  - if current_user
+    = "Welcome #{current_user.username}."
+    = link_to 'Logout', logout_path, :class => 'btn btn-large'
+  - else
+    = link_to 'Sign Up', "#modal_signup", :class => 'btn btn-large btn-primary', "data-toggle" => "modal", "data-target" => "#modal_signup"
+    = link_to 'Login', "#modal_login", :class => 'btn btn-large btn-success', "data-toggle" => "modal", "data-target" => "#modal_login"
+
+    
+%br
+= link_to "About", about_path
+= link_to "Test", test_path
+
+#modal_login.modal.fade
+  = simple_form_for :sessions, :url => sessions_path, :html => {:class => 'well form-horizontal'} do |f|
+    %div{:style => 'pading:30px;'}
+      = button_close_modal
+      %br
+    .row{:style=>'margin:50px 0px;'}
+      .col-span-4
+        %h2 Login
+      .col-span-4
+        = f.error_notification
+        = f.input :email
+        = f.input :password
+      .col-span-4
+        = f.submit "Login", :class => 'btn btn-success btn-large'
+
+
+
+#modal_signup.modal.fade
+  .modal-dialog
+    .modal-content
+      = form_for :user, :url => users_path, :html => {:class => 'form-horizontal'} do |f|
+        .modal-header{style: "background-color: #EEEEEE;"}
+          %button.close{:type => 'button', 'data-dismiss'=> 'modal', 'aria-hidden'=>"true", :style => "right:0px;"}= raw '&times;'
+          %h2.modal-title SignUp
+          %small Create your account
+        .modal-body
+          .control-group
+            = f.label :email, :class => 'control-label'
+            .controls
+              = f.text_field :email
+          .control-group
+            = f.label :password, :class => 'control-label'
+            .controls
+              = f.password_field :password
+          .control-group
+            = f.label :password_confirmation, :class => 'control-label'
+            .controls
+              = f.password_field :password_confirmation
+          
+        .modal-footer{style: "background-color: #EEEEEE;"}
+          .control-group
+            .controls
+              = f.submit "Sign Up", :class => "btn btn-primary"

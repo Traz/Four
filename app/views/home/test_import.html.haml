@@ -1,0 +1,711 @@
+
+/ Title h1
+.row-fluid
+  .span4{:style => "padding-left: 20px;"}
+    %h1 Bootstrap Cheat Sheet
+/ Fluid Grid Example
+.row-fluid
+  .span4{:style => "padding-left: 20px;"}
+    %h3 Fluid Grid Example
+.row-fluid
+  .span12{:style => "padding-left: 20px;"}
+    This is an example of the fluid grid system built into bootstrap. It's pretty simple.
+    It's a system of 12 columns reference by the css class "span" + number and each row is added with a
+    %code &lt;div class="row-fluid"&gt;
+.row-fluid
+  .span3{:style => "padding-left: 20px;"}
+    %pre
+      :preserve
+        &lt;div class="row-fluid"&gt;
+          &lt;div class="span4 bg"&gt;4&lt;/div&gt;
+          &lt;div class="span8 bg"&gt;8&lt;/div&gt;
+        &lt;/div&gt;
+    %br/
+.row-fluid
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+  .span1.bg 1
+%br/
+.row-fluid
+  .span4.bg 4
+  .span4.bg 4
+  .span4.bg 4
+%br/
+.row-fluid
+  .span4.bg 4
+  .span8.bg 8
+%br/
+.row-fluid
+  .span6.bg 6
+  .span6.bg 6
+%br/
+.row-fluid
+  .span12.bg 12
+%br/
+.row-fluid
+  .span12{:style => "padding-left: 20px;"}
+    %h4 Nesting columns and Offsetting
+    There's also nesting and offsets available.
+    %br/
+    Offset: Just add the .offset + number class to the element being offset.
+    Nesting: ... uhh it's just nesting dude. Figure it out.
+    %br/
+    %br/
+    %h4 Responsive Design
+    Responsive Design is not built in. You have to do it yourself.
+    %br/
+    Click here to read more about how it's done.
+    %a{:href => "http://twitter.github.com/bootstrap/scaffolding.html#responsive"}
+      Responsive Design
+%br/
+/ Fluid Layout Example
+.row-fluid
+  .span4{:style => "padding-left: 20px;"}
+    %h3 Fluid Layout Example
+.row-fluid
+  .span12{:style => "padding-left: 20px;"}
+    The Fluid Layout give you a multi column layout with the width of each column set by the divs included.
+    I'm going to use this example and the rest in one area to save time and space.
+.row-fluid
+  .span3{:style => "padding-left: 20px;"}
+    %pre
+      :preserve
+        
+                  &lt;div class="container-fluid"&gt;
+                    &lt;div class="row-fluid"&gt;
+                      &lt;!-- each columns listed here --&gt;
+                      &lt;div class="span2"&gt;&lt;/div&gt;
+                      &lt;div class="span5"&gt;&lt;/div&gt;
+                      &lt;div class="span5"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+    %br/
+.container-fluid
+  .row-fluid
+    / Left Column
+    .span2
+      %h3{:style => "text-align: center"} Left column
+      %dl
+        %dt Buttons
+        %dd Just add the "btn-(button-level)" class to each button element.
+      %button.btn{:type => "button"} Standard
+      %br/
+      %button.btn.btn-primary{:type => "button"} Primary
+      %br/
+      %button.btn.btn-info{:type => "button"} Info
+      %br/
+      %button.btn.btn-success{:type => "button"} Success
+      %br/
+      %button.btn.btn-warning{:type => "button"} Warning
+      %br/
+      %button.btn.btn-danger{:type => "button"} Danger
+      %br/
+      %button.btn.btn-inverse{:type => "button"} Inverse
+      %br/
+      %button.btn.btn-link{:type => "button"} Link
+      %br/
+      %dl
+        %dt Loading Button
+        %dd A button that changes to a loading state
+      %button.btn.btn-primary{"data-loading-text" => "loading.", :type => "button"} Click to load
+      %dl
+        %dt Single Toggle Button
+        %dd A button that toggles or switches between states
+      %button.btn.btn-primary{"data-toggle" => "button", :type => "button"} Single Toggle
+      %dl
+        %dt Checkbox Buttons
+        %dd A set of buttons that act like checkboxes
+      %dl
+      .btn-group{"data-toggle" => "buttons-checkbox"}
+        %button.btn.btn-primary{:type => "button"} Left
+        %button.btn.btn-primary{:type => "button"} Middle
+        %button.btn.btn-primary{:type => "button"} Right
+      %dl
+        %dt Radio Buttons
+        %dd A set of buttons that act like radios
+      .btn-group{"data-toggle" => "buttons-radio"}
+        %button.btn.btn-primary{:type => "button"} Left
+        %button.btn.btn-primary{:type => "button"} Middle
+        %button.btn.btn-primary{:type => "button"} Right
+      %dl
+        %dt Button Size
+        %dd Just add the "btn-(button-size)" class to each button element.
+      %button.btn.btn-large{:type => "button"} Large
+      %br/
+      %button.btn{:type => "button"} Default
+      %br/
+      %button.btn.btn-small{:type => "button"} Small
+      %br/
+      %button.btn.btn-mini{:type => "button"} Mini
+      %br/
+      %br/
+      %dl
+        %dt Block Level Button
+        %dd Just add the "btn-block" class to each button element.
+      %button.btn.btn-block{:type => "button"} Default
+      %br/
+      %dl
+        %dt Button Group Example
+        %dd
+          %code &lt;div class="btn-group"&gt;&lt;/div&gt;
+      .btn-group
+        %button.btn 1
+        %button.btn 2
+        %button.btn 3
+      %dl
+        %dt Button Toolbar
+        %dd
+          For when you need multiple button groups in a row?
+          %br/
+          Just add another div around all the button groups and slap on the
+          "btn-toolbar" class to that div.
+      .btn-toolbar
+        .btn-group
+          %button.btn 1
+          %button.btn 2
+          %button.btn 3
+        .btn-group
+          %button.btn 1
+          %button.btn 2
+          %button.btn 3
+      %dl
+        %dt Vertical Button Group
+        %dd
+          Exactly how it sounds.
+          %br/
+          Use "btn-group-vertical"
+      .btn-group-vertical
+        %button.btn 1
+        %button.btn 2
+        %button.btn 3
+      %dl
+        %dt Images and Icons
+        %dd
+          Eh. Just go
+          = succeed "." do
+            %a{:href => "http://twitter.github.com/bootstrap/base-css.html#images"} here
+          %br/
+          Worth the read.
+      %dl
+        %dt Emphasis Classes
+        %dd Add the (emphasis class) to any &lt;p&gt; element.
+      %p.muted Muted.
+      %p.text-warning Text-Warning.
+      %p.text-error Text-Error.
+      %p.text-info Text-Info.
+      %p.text-success Text-Success.
+      %dl
+        %dt Code
+        %dd
+          Element tag to display code.
+          %code
+            \&lt;code&gt;&lt;/code&gt;
+      %dl
+        %dt Description
+        %dd
+          Some weird way to do descriptions. I dunno. okay.
+          I ended up using it just to learn it. I don't think
+          it will ever really be useful. Just style it yourself.
+          %pre
+            :preserve
+              
+              &lt;dl&gt;
+                &lt;dt&gt;Bold text here.&lt;dt&gt;
+                &lt;dd&gt;Desc. text here.&lt;dd&gt;
+              &lt;dl&gt;
+    / Middle Column
+    .span5
+      / Colunmn Header
+      %h3{:style => "text-align: center"} Middle column
+      %h4 Tables
+      %code &lt;table&gt;
+      classes:
+      %br/
+      "table" for basic table
+      %br/
+      "table-striped" for striping
+      %br/
+      "table-borderd" for all borders and rounded corners
+      %br/
+      "table-hover" to change color on hover
+      %br/
+      "table-condensed" for less padding
+      %br/
+      %br/
+      %code &lt;tr&gt;
+      classes:
+      %br/
+      "success" for a green row
+      %br/
+      "error" for a red row
+      %br/
+      "warning for a yellow row
+      %br/
+      "info" for a puke blue row
+      %br/
+      %table.table.table-striped.table-bordered.table-hover.table-condensed
+        %caption Caption Example
+        %thead
+          %tr
+            %th First Header
+            %th Second Header
+            %th Third Header
+            %th Fourth Header
+        %tbody
+          %tr
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr.success
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr.error
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr.warning
+            %td first
+            %td scond
+            %td third
+            %td fourth
+          %tr.info
+            %td first
+            %td scond
+            %td third
+            %td fourth
+      %br/
+      %h4 Forms and Inputs
+      This section is mostly redudant to the HTML spec so not worth putting here.
+      %br/
+      It's worth reading this section on bootstraps's page since they have pretty examples.
+      %br/
+      %a{:href => "http://twitter.github.com/bootstrap/base-css.html#forms"} Click here for examples.
+      %br/
+      %br/
+      %br/
+      %h4 Dropdown
+      I guess this works by creating a Unordered list with all the menu options as list items.
+      Then you add it to some element... somehow. I don't completely understand it.
+      I think you need something with a "data-toggle" attribute and set it to "dropdown"
+      and it'll find the next unordered list element and turn that into a dropdown.
+      %br/
+      You can align shit too. But I don't know when that's going to come in handy.
+      Look it up yourself if you need it.
+      %br/
+      Oh yea, Buttons with dropdowns must be individually wrapped in their own
+      \.btn-group within a .btn-toolbar for proper rendering. And it requires JS.
+      %br/
+      %br/
+      %pre
+        :preserve
+          
+          &lt;div class="btn-group"&gt;
+            &lt;a class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+              Action
+              &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;ul class="dropdown-menu"&gt;
+              &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+              &lt;li class="divider"&gt;&lt;/li&gt;
+              &lt;li class="dropdown-submenu"&gt;
+                &lt;a tabindex="-1" href="#"&gt;More options&lt;/a&gt;
+                &lt;ul class="dropdown-menu"&gt;
+                  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Some submenu shit.&lt;/a&gt;
+                  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Some submenu shit.&lt;/a&gt;
+                  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Some submenu shit.&lt;/a&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+      %br/
+      %strong Example
+      .btn-group
+        %a.btn.dropdown-toggle{"data-toggle" => "dropdown"}
+          Action
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#", :tabindex => "-1"} Action
+          %li
+            %a{:href => "#", :tabindex => "-1"} Another action
+          %li
+            %a{:href => "#", :tabindex => "-1"} Something else here
+          %li.divider
+          %li.dropdown-submenu
+            %a{:href => "#", :tabindex => "-1"} More options
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+      %br/
+      %br/
+      %h4 Split Button Drop Down
+      Same thing, pretty much. Just add another button in the button group,
+      and change the link into a button. Move the text from the old link to the new button.
+      %br/
+      %pre
+        :preserve
+          
+          Change this: 
+          &lt;a class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+            Action
+            &lt;span class="caret"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+          
+          To This:
+          &lt;button class="btn"&gt;Action&lt;/button&gt;
+          &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+            &lt;span class="caret"&gt;&lt;/span&gt;
+          &lt;/button&gt;
+      %strong Example
+      .btn-group
+        %button.btn Action
+        %button.btn.dropdown-toggle{"data-toggle" => "dropdown"}
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#", :tabindex => "-1"} Action
+          %li
+            %a{:href => "#", :tabindex => "-1"} Another action
+          %li
+            %a{:href => "#", :tabindex => "-1"} Something else here
+          %li.divider
+          %li.dropdown-submenu
+            %a{:href => "#", :tabindex => "-1"} More options
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+              %li
+                %a{:href => "#", :tabindex => "-1"} Some submenu shit.
+      %br/
+      %br/
+      %h4 Tabbed Navigation
+      There's other types of navigation built into bootstrap.
+      But this is the one I use the most. So go write your own cheat sheet if you don't like it.
+      %br/
+      Link to Bootstraps Nav & Navbar page:
+      %a{:href => "http://twitter.github.com/bootstrap/components.html#navs"} Navigation
+      .tabbable
+        / Only required for left/right tabs
+        %ul.nav.nav-tabs.navbar-inverse
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#tab1"} Section 1
+          %li
+            %a{"data-toggle" => "tab", :href => "#tab2"} Section 2
+        .tab-content
+          #tab1.tab-pane.active
+            %p I'm in Section 1.
+          #tab2.tab-pane
+            %p Howdy, I'm in Section 2.
+      %hr/
+      %br/
+      %h4 Modal Panel
+      Shit pops up. Can't explain that.
+      %br/
+      %br/
+      %strong Example
+      %a.btn{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Launch demo modal
+      #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+          %h3#myModalLabel Can't Explain that.
+        .modal-body
+          %p ... Or can you?
+        .modal-footer
+          %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+          %button.btn.btn-primary Save changes
+      %br/
+      %br/
+      %h4 ScrollSpy
+      Too lazy to do this. Doubt I'll ever use it.
+      Link to the Docs:
+      %a{:href => "http://twitter.github.com/bootstrap/javascript.html#scrollspy"}
+        Scrollspy
+      %br/
+      %br/
+      %h4 Tooltips
+      %div
+        Hover over
+        %span#test{:style => "color: blue;"} this
+        to see a tooltip.
+        This one is built using the jQuery Javascript plugin.
+        %br/
+        The JS script for this is just $('#' + something).tooltip();
+        %br/
+        %br/
+        The worthwihle options are:
+        %br/
+        animation : boolean
+        %br/
+        html : boolean
+        %br/
+        placement : string
+        %br/
+        title : delay
+        %br/
+        delay : number
+        %br/
+      %br/
+      %h4 Popover
+      Similar to tooltips but cooler.
+      %br/
+      %br/
+      %div
+        Popover Example:
+        %br/
+        %button#popoverTest.btn.btn-primary Popover
+        %br/
+        %br/
+        The JS script for this is just $('#' + something).tooltip();
+        %br/
+        %br/
+        The worthwihle options are:
+        %br/
+        animation : boolean
+        %br/
+        html : boolean
+        %br/
+        placement : string
+        %br/
+        trigger : string (click | hover | focus | manual)
+        %br/
+        title : delay
+        %br/
+        content : string
+        %br/
+        delay : number
+        %br/
+    / Right Column
+    .span5
+      %h3{:style => "text-align: center"} Right column
+      %h4 Pagination
+      Or what just looks like it.
+      %br/
+      .pagination.pagination-centered
+        %ul
+          %li.disabled
+            %a{:href => "#"} Prev
+          %li.active
+            %a{:href => "#"} 1
+          %li
+            %a{:href => "#"} 2
+          %li
+            %a{:href => "#"} 3
+          %li
+            %a{:href => "#"} 4
+          %li
+            %a{:href => "#"} 5
+          %li
+            %a{:href => "#"} Next
+      %h4 Pager?!?
+      Not sure why you would use this if you have the thing above this?
+      %br/
+      %ul.pager
+        %li
+          %a{:href => "#"} Previous
+        %li
+          %a{:href => "#"} Next
+      Unless you're doing this.
+      %br/
+      %ul.pager
+        %li.previous.disabled
+          %a{:href => "#"} Previous
+        %li.next
+          %a{:href => "#"} Next
+      %h4 Labels
+      As if you didn't have enough things with color.
+      %br/
+      Add the class "label label-(labelType)" to any span.
+      %br/
+      %span.label Default
+      %span.label.label-success Success
+      %span.label.label-warning Warning
+      %span.label.label-important Important
+      %span.label.label-info Info
+      %span.label.label-inverse Inverse
+      %br/
+      %br/
+      %h4 Badges
+      Even more colors to burn your retinas on.
+      %br/
+      %span.badge Default
+      %span.badge.badge-success Success
+      %span.badge.badge-warning Warning
+      %span.badge.badge-important Important
+      %span.badge.badge-info Info
+      %span.badge.badge-inverse Inverse
+      %br/
+      %br/
+      %h4 Hero Unit
+      .hero-unit
+        %h1 Heading
+        %p Tagline
+        %p
+          %a.btn.btn-primary.btn-large
+            Learn more
+      %h4 Thumbnails
+      %ul.thumbnails
+        %li.span4
+          %a.thumbnail{:href => "#"}
+            %img{:alt => "", :src => "http://placehold.it/300x200"}/
+        %li.span4
+          %a.thumbnail{:href => "#"}
+            %img{:alt => "", :src => "http://placehold.it/300x200"}/
+        %li.span4
+          %a.thumbnail{:href => "#"}
+            %img{:alt => "", :src => "http://placehold.it/300x200"}/
+      %h4 Alerts
+      .alert.alert-block
+        / alert-block added for multiline
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %strong Warning!
+        Best check yo self, you're not looking too good.
+      .alert.alert-error
+        / alert-block added for multiline
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %strong Error!
+        Best check yo self, you're not looking too good.
+      .alert.alert-success
+        / alert-block added for multiline
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %strong Success!
+        You're looking good.
+      .alert.alert-info
+        / alert-block added for multiline
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %strong Info!
+        You're not looking too good.
+      Mobile Safari and Mobile Opera browsers, in addition to the data-dismiss="alert" attribute,
+      require an href="#" for the dismissal of alerts when using an &lt;a&gt; tag.
+      %br/
+      I don't care about these guys so look that up yourself.
+      %br/
+      %br/
+      %h4 Progress Bars
+      .progress
+        .bar{:style => "width: 60%;"}
+      .progress.progress-striped
+        .bar{:style => "width: 60%;"}
+      .progress.progress-striped.active
+        .bar{:style => "width: 60%;"}
+      .progress
+        .bar.bar-success{:style => "width: 35%;"}
+        .bar.bar-warning{:style => "width: 20%;"}
+        .bar.bar-danger{:style => "width: 10%;"}
+      .progress.progress-info
+        .bar{:style => "width: 20%"}
+      .progress.progress-success
+        .bar{:style => "width: 40%"}
+      .progress.progress-warning
+        .bar{:style => "width: 60%"}
+      .progress.progress-danger
+        .bar{:style => "width: 80%"}
+      .progress.progress-info.progress-striped
+        .bar{:style => "width: 20%"}
+      .progress.progress-success.progress-striped
+        .bar{:style => "width: 40%"}
+      .progress.progress-warning.progress-striped
+        .bar{:style => "width: 60%"}
+      .progress.progress-danger.progress-striped
+        .bar{:style => "width: 80%"}
+      .progress.progress-info.progress-striped.active
+        .bar{:style => "width: 20%"}
+      .progress.progress-success.progress-striped.active
+        .bar{:style => "width: 40%"}
+      .progress.progress-warning.progress-striped.active
+        .bar{:style => "width: 60%"}
+      .progress.progress-danger.progress-striped.active
+        .bar{:style => "width: 80%"}
+      Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported in IE7-9 or older versions of Firefox. Versions earlier than Internet Explorer 10 and Opera 12 do not support animations.
+      %br/
+      %br/
+      %h4 Well
+      .well.well-small
+        / can also add "well-large" and "well-small"
+        Just puts text into a pretty box.
+      %br/
+      %h4 Close Icon
+      %button.close.pull-left &times;
+      %br/
+      %br/
+      %h4 Muted Color
+      Just use the class "muted"
+      %br/
+      %br/
+      %h4 Collapse
+      You've seen this before. It set three or so section and you can "collapse"
+      them as needed to save space. I never use this. So... go figure it out
+      yourself. Here's the link:
+      %br/
+      %a{:href => "http://twitter.github.com/bootstrap/javascript.html#collapse"} Collapse
+      %br/
+      %br/
+      %h4 Carousel
+      The pictures go round and round. You could probably find a better implementation elsewhere.
+      This can handle more than just pictures though. So maybe not.
+      %div{:style => "height: 60px;"}
+      #myCarousel.carousel.slide
+        / Carousel items
+        .carousel-inner
+          .active.item{:style => "text-align:center"} There should a picture here really.
+          .item{:style => "text-align:center"} Second set of text
+          .item{:style => "text-align:center"} I don't know what else to say.
+        / Carousel nav
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
+        %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;
+      %br/
+      %br/
+      %h4 Typeahead
+      Basically it's an autocomplete. I won't do this here because it requires a source.
+      I'm too lazy to make one. Maybe one day when I have more time I'll provide a full
+      example. For now, here's a link to the docs straight from bootstrap:
+      %br/
+      %a{:href => "http://twitter.github.com/bootstrap/javascript.html#typeahead"} Typeahead
+      %br/
+      %br/
+      %h4 Affix
+      This is complicated. I'll figure it out one day. Maybe.
+      %a{:href => "http://twitter.github.com/bootstrap/javascript.html#affix"} Affix
+  %br/
+  %br/
+  %br/
+  %script{:src => "http://code.jquery.com/jquery-latest.js"}
+  %script{:src => "js/bootstrap.min.js"}
+  :javascript
+    $('#test').tooltip({animation:true, placement:'top',title:"Something to say"});
+    $('#popoverTest').popover({animation:true, placement:'right', trigger:'click', title:"This is a title", content:"Popover Content"});

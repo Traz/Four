@@ -1,0 +1,181 @@
+:css
+  .show-grid {
+      margin-bottom: 15px;
+  }
+  .show-grid [class*="col-span-"] {
+      background-color: #EEEEEE;
+      border: 1px solid #DDDDDD;
+      padding-bottom: 10px;
+      padding-top: 10px;
+  }
+  .show-grid [class*="col-span-"]:hover {
+      background-color: #DDDDDD;
+  }
+
+
+=image_tag 'rails.png'
+
+%h1 test for bootstrap
+
+.row.show-grid
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+  .col-span-1 1
+
+.row.show-grid
+  .col-span-4 4
+  .col-span-4 4
+  .col-span-4 4
+
+.row.show-grid
+  .col-span-6 6
+  .col-span-6 6
+
+.label Default
+.label.label-success Success
+.label.label-warning Warning
+.label.label-danger Danger
+.label.label-info Info
+
+<div class="jumbotron">
+<h1>Hello, world!</h1>
+<p>test test</p>
+<p><a class="btn btn-primary btn-large">Learn more</a></p>
+</div>
+
+<div class="page-header">
+<h1>Example page header <small>Subtext for header</small></h1>
+</div>
+
+<div class="modal">
+<!-- Button trigger modal -->
+<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">Launch demo modal</a>
+
+<!-- Modal -->
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title">Modal title</h4>
+</div>
+<div class="modal-body">
+%p body test
+</div>
+<div class="modal-footer">
+<a href="#" class="btn">Close</a>
+<a href="#" class="btn btn-primary">Save changes</a>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dalog -->
+</div><!-- /.modal -->
+
+
+<div class="btn-group">
+<button class="btn">Action</button>
+<button class="btn dropdown-toggle" data-toggle="dropdown">
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>
+
+
+.text-muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+.text-warning Etiam porta sem malesuada magna mollis euismod.
+.text-danger Donec ullamcorper nulla non metus auctor fringilla.
+.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+%blockquote.pull-right
+  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  %small Someone famous <cite title="Source Title">Source Title</cite>
+
+%br.clearfix
+
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+
+%br
+%br
+
+<form class="form-inline">
+<input type="text" class="col-span-3" placeholder="Email">
+<input type="password" class="col-span-3" placeholder="Password">
+<div class="checkbox">
+<label>
+<input type="checkbox"> Remember me
+</label>
+</div>
+<button type="submit" class="btn">Sign in</button>
+</form>
+
+
+<form class="form-horizontal">
+<div class="control-group">
+<label class="control-label" for="inputEmail">Email</label>
+<div class="controls">
+<input type="text" id="inputEmail" placeholder="Email">
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputPassword">Password</label>
+<div class="controls">
+<input type="password" id="inputPassword" placeholder="Password">
+<div class="checkbox">
+<label>
+<input type="checkbox"> Remember me
+</label>
+</div>
+</div>
+</div>
+<div class="control-group">
+<div class="controls">
+<button type="submit" class="btn">Sign in</button>
+</div>
+</div>
+</form>
+
+<div class="input-group col-span-9">
+<span class="input-group-addon">@</span>
+<input type="text" placeholder="Username">
+</div>
+
+<div class="input-group col-span-6">
+<input type="text">
+<span class="input-group-addon">.00</span>
+</div>
+
+<div class="input-group col-span-3">
+<span class="input-group-addon">$</span>
+<input type="text">
+<span class="input-group-addon">.00</span>
+</div>
+
+<button class="close" style="float: none;">&times;</button>
+
+<div class="btn-group">
+<a class="btn btn-primary" href="#"><span class="glyphicon glyphicon-user"></span> User</a>
+<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
+<li><a href="#"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+<li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span> Ban</a></li>
+<li class="divider"></li>
+<li><a href="#"><span class="glyphicon glyphicon-"></span> Make admin</a></li>
+</ul>
+</div>
+
+
+

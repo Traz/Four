@@ -1,0 +1,6 @@
+
+- flash.each do |level, message|
+  %div{ :class => flash_class(level) }
+    %button.close{:type => 'button', "data-dismiss" => "alert"}= raw '&times;'
+    %h4.alert-heading Notice !
+    %p= message

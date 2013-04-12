@@ -1,0 +1,10 @@
+.jumbotron{style: "margin-top:200px;"}
+  %h2 Welcome
+  %small Login page test
+  <br />
+  = form_for :sessions, :url => sessions_path, :html => {:class => 'form-horizontal'} do |f|
+    .form-inputs
+      = f.text_field :email
+      = f.password_field :password
+    .form-actions
+      = f.submit "Login", :class => 'btn btn-primary btn-large'

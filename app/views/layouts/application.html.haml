@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Four
+    = stylesheet_link_tag "application", media: "all",  "data-turbolinks-track" => true
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.png', :rel => 'shorcut icon'
+    <link href='http://fonts.googleapis.com/css?family=Skranji:700' rel='stylesheet' type='text/css'>
+
+  %body
+    .container
+      = render 'shared/flash_message'
+      = yield
+
+
