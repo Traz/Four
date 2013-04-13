@@ -40,6 +40,7 @@
         %h2 SignUp
       .col-span-4
         = f.error_notification
+        = f.input :username
         = f.input :email
         = f.input :password, :required => true
         = f.input :password_confirmation, :required => true

@@ -3711,15 +3711,16 @@ button.close {
   filter: alpha(opacity=50);
 }
 .modal-header {
-  padding: 9px 15px;
+  padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  min-height: 35px;
 }
 .modal-header .close {
-  margin-top: 2px;
+  margin-top: -2px;
 }
 .modal-title {
   margin: 0;
-  line-height: 30px;
+  line-height: 20px;
 }
 .modal-body {
   position: relative;
