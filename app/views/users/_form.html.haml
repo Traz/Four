@@ -4,8 +4,16 @@
   = f.input :lastname
   = f.input :identity
   = f.input :email
-  = f.input :birthdate, :as => :date
+  = f.input :birthdate, :as => :string, :input_html => {:class => 'datepicker col-span-3'}  
   = f.input :active
   .form-actions
     = f.submit "Update", :class => "btn btn-primary" 
     = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" 
+
+:javascript
+  $('.datepicker').datepicker({
+      format: "yyyy-mm-dd",
+      todayHighlight: true,
+      todayBtn: 'linked',
+      autoclose: true
+  }); ;
