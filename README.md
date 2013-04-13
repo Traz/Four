@@ -16,6 +16,8 @@ Each tag come with a step, so :
   - Bootstrap 3 prerelease with node/lessc integration
   - Simple Form 3beta for Rails 4
   - Sorcery : authentication, signup and login.
+  - Simple form
+  - datePicker for bootstrap 3
 
 ### Usage
 
