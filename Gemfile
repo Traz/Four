@@ -8,6 +8,7 @@ gem 'thin'
 gem 'haml-rails' 
 gem 'sorcery'
 gem 'simple_form'
+gem 'kaminari'
 
 group :development do
   gem 'pry-rails'

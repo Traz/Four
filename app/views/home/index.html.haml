@@ -17,7 +17,7 @@
 
 #modal_login.modal.fade
   = simple_form_for :sessions, :url => sessions_path, :html => {:class => 'well form-horizontal'} do |f|
-    %div{:style => 'pading:30px;'}
+    %div{:style => 'padding-right:30px;'}
       = button_close_modal
       %br
     .row{:style=>'margin:50px 0px;'}
@@ -32,7 +32,7 @@
 
 #modal_signup.modal.fade
   = simple_form_for :user, :url => users_path, :html => {:class => 'well form-horizontal'} do |f|
-    %div{:style => 'pading:30px;'}
+    %div{:style => 'padding-right:30px;'}
       = button_close_modal
       %br
     .row{:style=>'margin:50px 0px;'}

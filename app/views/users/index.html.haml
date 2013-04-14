@@ -1,6 +1,6 @@
 %h1 Listing users
 
-%table
+%table.table.table-condensed
   %tr
     %th Username
     %th Lastname
@@ -9,8 +9,7 @@
     %th Birthdate
     %th Active
     %th
-    %th
-    %th
+
 
   - @users.each do |user|
     %tr
@@ -19,10 +18,17 @@
       %td= user.identity
       %td= user.email
       %td= user.birthdate
-      %td= user.active
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        - if !user.active
+          %span.label.label-warning= "Not active" 
+
+      %td
+        %small
+          = link_to 'Show', user
+          = link_to 'Edit', edit_user_path(user)
+          = link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @users
 
 %br
 

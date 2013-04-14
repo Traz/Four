@@ -1,23 +1,27 @@
-%p#notice= notice
+%h1 User Detail
 
-%p
-  %b Username:
-  = @user.username
-%p
-  %b Lastname:
-  = @user.lastname
-%p
-  %b Identity:
-  = @user.identity
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Birthdate:
-  = @user.birthdate
-%p
-  %b Active:
-  = @user.active
+.row.well
+  .col-span-3
+    %div{:style => 'text-align:right;list-style-type:none;font-weight:bold;'}
+      %p Username :
+      %p Lastname :
+      %p Identity :
+      %p Email :
+      %p Birthdate :
+      %p Active :
+  .col-span-8
+    %div{:style => 'list-style-type:none;'}
+      %p= @user.username 
+      %p= nbsp @user.lastname
+      %p= nbsp @user.identity
+      %p= @user.email
+      %p= nbsp @user.birthdate
+      %p
+        - if !@user.active
+          %span.label.label-warning= "Not active" 
+        - else
+          %span.label.label-success= "Active" 
+
 
 = link_to 'Edit', edit_user_path(@user)
 \|

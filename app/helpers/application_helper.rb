@@ -16,6 +16,8 @@ module ApplicationHelper
       :class => 'close'
   end
 
-
+  def nbsp(obj)
+    obj.to_s.blank? ? raw('&nbsp;') : obj
+  end
 
 end
