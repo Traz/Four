@@ -1,0 +1,24 @@
+%h1 Project Detail
+
+.row.well
+  .col-span-3
+    %div{:style => 'text-align:right;list-style-type:none;font-weight:bold;'}
+      %p Name :
+      %p Description :
+      %p Date create :
+      %p Owner :
+      %p Creator :
+      %p Status :
+  .col-span-8
+    %div{:style => 'list-style-type:none;'}
+      %p= nbsp @project.name 
+      %p= nbsp @project.description
+      %p= nbsp @project.date_create
+      %p= nbsp @project.owner_username
+      %p= nbsp @project.author_username
+      %p= nbsp @project.status
+
+
+= link_to 'Edit', edit_project_path(@project)
+\|
+= link_to 'Back', projects_path

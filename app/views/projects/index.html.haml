@@ -1,0 +1,31 @@
+%h1 Listing projects
+
+%table.table.table-condensed
+  %tr
+    %th Name
+    %th Description
+    %th Date create
+    %th Owner
+    %th Created by
+    %th Status
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.name
+      %td= project.description
+      %td= project.date_create
+      %td= project.owner_username
+      %td= project.author_username
+      %td= project.status
+      %td
+        %small
+          = link_to 'Show', project
+          = link_to 'Edit', edit_project_path(project)
+          = link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @projects
+
+%br
+
+= link_to 'New Project', new_project_path

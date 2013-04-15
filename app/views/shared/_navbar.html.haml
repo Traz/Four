@@ -4,10 +4,11 @@
     %ul.nav
       %li.dropdown
         = link_to "#", :class => "dropdown-toggle", "data-toggle"=>"dropdown" do
-          User
+          Lists
           %b.caret
         %ul.dropdown-menu
-          %li= link_to 'list', '#'
+          %li.nav-header= "Projects"
+          %li= link_to 'list', projects_path
           %li= link_to 'test', '#'
           %li.divider
           %li.nav-header= "Users"

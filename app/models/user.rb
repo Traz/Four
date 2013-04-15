@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates :password_confirmation,   presence: true, :if => :password
   validates :username,                presence: true
 
+  has_many :projects 
+  has_many :owners, :class_name => 'Project', :foreign_key => 'owner_id'
+
+
 end

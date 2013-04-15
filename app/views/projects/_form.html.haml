@@ -1,0 +1,22 @@
+= simple_form_for @project, :html => {:class => 'well form-horizontal'} do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :date_create, :as => :string, :input_html => {:class => 'datepicker col-span-3'} 
+    = f.association :owner, label_method: :username, value_method: :id
+    = f.association :user, label_method: :username, value_method: :id
+    = f.input :status
+
+
+  .form-actions
+    = f.submit :class => "btn btn-primary" 
+
+:javascript
+  $('.datepicker').datepicker({
+      format: "yyyy-mm-dd",
+      todayHighlight: true,
+      todayBtn: 'linked',
+      autoclose: true
+  }); ;

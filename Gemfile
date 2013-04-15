@@ -9,6 +9,7 @@ gem 'haml-rails'
 gem 'sorcery'
 gem 'simple_form'
 gem 'kaminari'
+gem 'vestal_versions'
 
 group :development do
   gem 'pry-rails'

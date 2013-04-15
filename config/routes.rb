@@ -1,5 +1,7 @@
 Red4::Application.routes.draw do
 
+  resources :projects
+
   root :to    => 'home#index'
   
   get "test"  => "home#test",   :as => "test"
