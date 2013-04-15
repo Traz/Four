@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @wiki.name
+%p
+  %b Content:
+  = @wiki.content
+%p
+  %b Owner:
+  = @wiki.owner
+%p
+  %b Author:
+  = @wiki.author
+%p
+  %b Status:
+  = @wiki.status
+
+= link_to 'Edit', edit_wiki_path(@wiki)
+\|
+= link_to 'Back', wikis_path

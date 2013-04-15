@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'sorcery'
 gem 'simple_form'
 gem 'kaminari'
-gem 'vestal_versions'
+gem 'vestal_versions', :github => ' laserlemon/vestal_versions', :branch => 'rails-4'
 
 group :development do
   gem 'pry-rails'

@@ -1,0 +1,18 @@
+= simple_form_for(@wiki) do |f|
+  = f.error_notification
+
+  .form-inputs
+
+    = f.input :name
+
+    = f.input :content
+
+    = f.association :owner
+
+    = f.association :author
+
+    = f.input :status
+
+
+  .form-actions
+    = f.button :submit

@@ -1,5 +1,7 @@
 Red4::Application.routes.draw do
 
+  resources :wikis
+
   resources :projects
 
   root :to    => 'home#index'
