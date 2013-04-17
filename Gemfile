@@ -10,12 +10,15 @@ gem 'sorcery'
 gem 'simple_form'
 gem 'kaminari'
 gem 'vestal_versions', :github => ' laserlemon/vestal_versions', :branch => 'rails-4'
+gem 'maruku'
 
 group :development do
   gem 'pry-rails'
   gem 'looksee'
   gem 'awesome_print'
   gem 'hirb'
+  gem "binding_of_caller"
+  gem "better_errors"
 end
 # Gems used only for assets and not required
 # in production environments by default.

@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   has_many :owners, :class_name => 'Project', :foreign_key => 'owner_id'
 
 
+  has_many :authors, :class_name => "Wiki", :foreign_key => 'author_id' 
+  has_many :owners, :class_name => 'Wiki', :foreign_key => 'owner_id'
+
 end

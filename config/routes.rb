@@ -1,21 +1,20 @@
 Red4::Application.routes.draw do
 
   resources :wikis
-
   resources :projects
 
+  resources :sessions
+  resources :users  
+
   root :to    => 'home#index'
-  
+
   get "test"  => "home#test",   :as => "test"
   get "about" => "home#about",  :as => "about"
-
-  resources :sessions
 
   get "login"   => "sessions#new",        :as => "login"
   get "logout"  => "sessions#destroy",    :as => "logout"
   get "signup"  => "users#new",           :as => "signup" 
   
-  resources :users
 
 
   # get "home/index"

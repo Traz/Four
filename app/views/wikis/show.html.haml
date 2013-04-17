@@ -1,20 +1,29 @@
-%p#notice= notice
+%h1 Wiki
 
-%p
-  %b Name:
-  = @wiki.name
-%p
-  %b Content:
-  = @wiki.content
-%p
-  %b Owner:
-  = @wiki.owner
-%p
-  %b Author:
-  = @wiki.author
-%p
-  %b Status:
-  = @wiki.status
+
+.row{:style => 'margin-bottom:100px;'}
+  .panel
+    .panel-heading= @wiki.name
+    = raw wiki_style @wiki.content
+
+.row.well.well-small
+  %b Owner :
+  =nbsp @wiki.owner_username
+  |
+  %b Last author :
+  = nbsp @wiki.author_username
+  |
+  %b Version : 
+  = @wiki.version
+
+  |
+  = link_to "Last version", @wiki
+  | 
+  %b see :
+  - @wiki.versions.each do |v|
+    = link_to v.number-1, :version => v.number-1
+
+  %p= nbsp @wiki.status
 
 = link_to 'Edit', edit_wiki_path(@wiki)
 \|

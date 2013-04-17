@@ -1,18 +1,25 @@
-= simple_form_for(@wiki) do |f|
+= simple_form_for @wiki, :html => {:class => 'well form-horizontal'} do |f|
   = f.error_notification
 
   .form-inputs
-
     = f.input :name
-
-    = f.input :content
-
-    = f.association :owner
-
-    = f.association :author
-
-    = f.input :status
+    .row
+      .col-span-4{:style => 'padding-left:0px;'}
+        = f.association :owner, label_method: :username, value_method: :id, :selected => current_user.id
+      .col-span-4
+        = f.association :author, label_method: :username, value_method: :id
+      .col-span-3
+        = f.input :status
+    %br
+    %ul.nav.nav-tabs
+      %li.active= link_to "Edit", "#field",  "data-toggle" => "tab"
+      %li= link_to "View", "#html",  "data-toggle" => "tab"
+    .tab-content{:style => 'margin-top: 10px;'}
+      #field.tab-pane.fade.active.in
+        = f.input :content
+      #html.tab-pane.fade{:style => "margin-left: 180px;"}
+        = raw wiki_style @wiki.content
 
 
   .form-actions
-    = f.button :submit
+    = f.submit :class => "btn btn-primary"

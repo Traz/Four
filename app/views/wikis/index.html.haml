@@ -1,6 +1,6 @@
 %h1 Listing wikis
 
-%table
+%table.table.table-condensed
   %tr
     %th Name
     %th Content
@@ -8,19 +8,21 @@
     %th Author
     %th Status
     %th
-    %th
-    %th
 
   - @wikis.each do |wiki|
     %tr
-      %td= wiki.name
-      %td= wiki.content
-      %td= wiki.owner
-      %td= wiki.author
+      %td= link_to wiki.name, wiki
+      %td= truncate wiki.content
+      %td= wiki.owner_username
+      %td= wiki.author_username
       %td= wiki.status
-      %td= link_to 'Show', wiki
-      %td= link_to 'Edit', edit_wiki_path(wiki)
-      %td= link_to 'Destroy', wiki, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        %small
+          = link_to 'Show', wiki
+          = link_to 'Edit', edit_wiki_path(wiki)
+          = link_to 'Destroy', wiki, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @wikis
 
 %br
 
