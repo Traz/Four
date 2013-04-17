@@ -12,7 +12,7 @@
 
   - @projects.each do |project|
     %tr
-      %td= project.name
+      %td= link_to project.name, project
       %td= project.description
       %td= project.date_create
       %td= project.owner_username
@@ -20,7 +20,6 @@
       %td= project.status
       %td
         %small
-          = link_to 'Show', project
           = link_to 'Edit', edit_project_path(project)
           = link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_wiki = Wiki.where(:name => "Project #{@project.name}").take
   end
 
   # GET /projects/new
@@ -28,6 +29,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        Wiki.new(:name => "Project #{@project.name}", :owner => current_user).save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
