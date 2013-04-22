@@ -1,7 +1,9 @@
 %h1 User Detail
 
 .row.well
-  .col-span-3
+  %div.pull-right.thumbnail
+    = link_to image_tag(@user.avatar.small.url), '#modal_avatar', :role => 'button', 'data-toggle'=>'modal'
+  .col-span-2
     %div{:style => 'text-align:right;list-style-type:none;font-weight:bold;'}
       %p Username :
       %p Lastname :
@@ -26,3 +28,15 @@
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path
+
+#modal_avatar.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        = button_close_modal
+        %h4 Image
+      .modal-body
+        = image_tag @user.avatar.url, :style => 'max-height: 400px;max-width: 400px;margin: 0 auto;display:block;', :class => 'img-thumbnail'
+      .modal-footer
+
+

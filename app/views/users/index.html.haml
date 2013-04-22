@@ -2,6 +2,7 @@
 
 %table.table.table-condensed
   %tr
+    %th 
     %th Username
     %th Lastname
     %th Identity
@@ -13,6 +14,7 @@
 
   - @users.each do |user|
     %tr
+      %td= image_tag user.avatar.small.url
       %td= user.username
       %td= user.lastname
       %td= user.identity

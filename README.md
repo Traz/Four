@@ -3,7 +3,7 @@
 I'm digging (again) in Rails & Ruby just for the fun :)
 So this is a small Rails Application build step by step (see notes & mémos on my [Traz notes](http://traz.github.io)) for exploring the latest libraries.
 
-The Rails app will cover a small project managing, on Windows with Ruby 2.0.
+The Rails app will cover a small project managing, on Windows with Ruby 2.0 / Rails 4 / Bootstrap 3.
 
 ### History
 
@@ -30,6 +30,9 @@ Each tag come with a step, so :
 - 0.1.4 :
   - a versionned wiki with vestal_versions
   - integration of gem better\_errors
+
+- 0.1.5 :
+  - carrierwave installation
 
 ### Usage
 

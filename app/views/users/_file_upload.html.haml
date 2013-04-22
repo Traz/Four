@@ -1,0 +1,14 @@
+
+.control-group.file.optional.user_avatar
+  %label.file.optional.control-label{for: "user_avatar"} Avatar
+  .controls
+    .fileupload.fileupload-new{"data-provides" => "fileupload"}
+      .fileupload-new.thumbnail{style: "width: 50px; height: 50px;"}= image_tag @user.avatar.small.url
+      .fileupload-preview.fileupload-exists.thumbnail{style: "width: 50px; height: 50px;"}
+      %span.btn.btn-file.btn-primary
+        %span.fileupload-new Select image
+        %span.fileupload-exists Change
+        = f.input_field :avatar, :as => :file
+      = link_to "Remove", "#", class: "btn fileupload-exists", "data-dismiss" => "fileupload"
+
+
