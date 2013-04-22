@@ -33,6 +33,8 @@ Each tag come with a step, so :
 
 - 0.1.5 :
   - carrierwave installation
+  - user's avatar image upload
+  - jasny bootstrap file upload extension
 
 ### Usage
 
