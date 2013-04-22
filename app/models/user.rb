@@ -1,3 +1,5 @@
+require 'file_size_validator' 
+
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
  
@@ -12,5 +14,11 @@ class User < ActiveRecord::Base
 
   has_many :authors, :class_name => "Wiki", :foreign_key => 'author_id' 
   has_many :owners, :class_name => 'Wiki', :foreign_key => 'owner_id'
+
+  mount_uploader :avatar, AvatarUploader
+  validates :avatar, 
+    :file_size => { :maximum => 5.megabytes.to_i} 
+  validates_integrity_of :avatar
+  validates_processing_of :avatar    
 
 end

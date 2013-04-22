@@ -11,6 +11,10 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'vestal_versions', :github => ' laserlemon/vestal_versions', :branch => 'rails-4'
 gem 'maruku'
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :development do
   gem 'pry-rails'
